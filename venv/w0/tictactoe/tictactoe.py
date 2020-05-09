@@ -155,7 +155,7 @@ def minimax(board):
             if v <= test[0]:
                 v = test[0]
                 best.append(coor)
-        # return value and coorinate in tuple
+        # return value and coordinates in tuple
         return (v, best)
 
     # finding min/beta
@@ -177,10 +177,10 @@ def minimax(board):
             if v >= test[0]:
                 v = test[0]
                 best.append(coor)
-        # return value and coorinate in tuple
+        # return value and coordinates in tuple
         return (v, best)
 
     # return the coordinates as action
-    choices=maxval(board)[1]
+    choices = maxval(board)[1]
     import random
     return random.choice(choices)
