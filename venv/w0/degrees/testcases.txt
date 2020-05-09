@@ -1,0 +1,8 @@
+Test Cases
+1. Person not found	(jennifer lawrence in small)
+2. Not connected	(emma watson with kevin bacon in small)
+3. Source switch with target (value should remain the same)
+4. Small to large csv difference (cary elwes with kevin bacon)
+	3-> 2 due to more paths but not always decrease
+	thanks!
+

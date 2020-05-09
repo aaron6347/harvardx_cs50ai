@@ -92,36 +92,37 @@ def shortest_path(source, target):
     If no possible path, returns None.
     """
     # find all neighours for initiation
-    stars=neighbors_for_person(source)
+    stars = neighbors_for_person(source)
     # store into queue
     queue = [[x] for x in stars]
     # if any neighbour is the target already return the answer right away
     for x in queue:
-        if x[0][1]==target:
+        if x[0][1] == target:
             return x
     # store traversed (moviesid, peopleid) to prevent looping
     visited = []
     # breadth first search recursive
     while queue:
         # take the first list
-        path=queue.pop(0)
+        path = queue.pop(0)
         # take the last node from the list
-        node=path[-1]
+        node = path[-1]
         # if the node is not visited yet, need to search for its neighbours
         if node not in visited:
-            stars=neighbors_for_person(node[1])
+            stars = neighbors_for_person(node[1])
             # for each neighours, set new list for current list to be a new path and store into the queue
             for x in stars:
-                new_path=list(path)
+                new_path = list(path)
                 new_path.append(x)
                 queue.append(new_path)
                 # if any neighbour found is the target, return the list
-                if x[1]==target:
+                if x[1] == target:
                     return new_path
             # store this node as visited after found all neighbours and setting new list into the queue
             visited.append(node)
     # if after all queue list searched done or none queue list (no movie) then just return None
     return None
+
 
 def person_id_for_name(name):
     """
